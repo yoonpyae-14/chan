@@ -1,0 +1,71 @@
+
+
+<!-- Chan's Birthday Music -->
+
+<div class="music-player">
+
+  <button id="musicBtn" onclick="toggleMusic()">
+
+    🎵 Play Music
+
+  </button>
+
+  <div id="youtubeMusic" style="display:none;">
+
+    <iframe
+
+      id="youtubeFrame"
+
+      width="250"
+
+      height="80"
+
+      src="https://www.youtube.com/embed/EAnLyHsc3-Y?enablejsapi=1"
+
+      title="I Think They Call This Love"
+
+      allow="autoplay; encrypted-media"
+
+      referrerpolicy="strict-origin-when-cross-origin">
+
+    </iframe>
+
+  </div>
+
+</div>
+
+<script>
+
+let musicPlaying = false;
+
+function toggleMusic() {
+
+  const frame = document.getElementById("youtubeFrame");
+
+  const btn = document.getElementById("musicBtn");
+
+  if (!musicPlaying) {
+
+    frame.src =
+
+      "https://www.youtube.com/embed/EAnLyHsc3-Y?autoplay=1&enablejsapi=1";
+
+    document.getElementById("youtubeMusic").style.display = "block";
+
+    btn.textContent = "⏸ Pause Music";
+
+    musicPlaying = true;
+
+  } else {
+
+    frame.src = "";
+
+    btn.textContent = "🎵 Play Music";
+
+    musicPlaying = false;
+
+  }
+
+}
+
+</script>
